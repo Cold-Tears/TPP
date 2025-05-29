@@ -13,6 +13,21 @@ body {
   flex-direction: column;
 }
 
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('imagenes/referencia-fondo.png'); /* 🔁 Cambia aquí tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  filter: blur(4px); /* 🎯 Puedes cambiar este valor para ajustar el blur */
+}
+
 .metrics-hud {
   position: absolute;
   top: 20px;
@@ -91,4 +106,20 @@ input#input-word {
 
 .incorrect {
   color: #ff6b6b;
+}
+
+.top-panel {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.top-image {
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #00000088);
 }

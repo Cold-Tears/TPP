@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escribe Rápido</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: 'Fira Code', monospace;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metrics-hud {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #1f1f1f;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    .top-panel {
+      flex: 6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .middle-panel {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 24px;
+      line-height: 1.6;
+    }
+
+    .bottom-panel {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid #2a2a2a;
+      padding: 20px;
+    }
+
+    input#input-word {
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      font-size: 22px;
+      padding: 10px 20px;
+      width: 60%;
+      outline: none;
+    }
+
+    .word {
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .active {
+      background-color: #444;
+      border-bottom: 2px solid #facc15;
+    }
+
+    .correct {
+      color: #8aff80;
+    }
+
+    .incorrect {
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+    
+
+  <!-- Panel de métricas en tiempo real -->
+  <div class="metrics-hud">
+    ⏱️ 00:00 &nbsp;|&nbsp;
+    🔤 Palabras: 0 &nbsp;|&nbsp;
+    ⚡ WPM: 0 &nbsp;|&nbsp;
+    ❌ Errores: 0
+  </div>
+
+  <!-- Panel superior (barras de vida, gráficos) -->
+  <div class="top-panel">
+    <!-- Placeholder para barras de vida -->
+    <p>(Aquí se mostrarán las barras de vida u otros elementos visuales)</p>
+  </div>
+
+  <!-- Panel de palabras -->
+  <div class="middle-panel" id="word-panel">
+    <span class="word correct">perro</span>
+    <span class="word incorrect">gata</span>
+    <span class="word active">fuego</span>
+    <span class="word">casa</span>
+    <span class="word">leche</span>
+  </div>
+
+  <!-- Panel inferior (entrada) -->
+  <div class="bottom-panel">
+    <input type="text" id="input-word" autocomplete="off" placeholder="Escribe aquí y presiona espacio o enter..." />
+  </div>
+
+</body>
+<script>
+  const input = document.getElementById("input-word");
+  const wordPanel = document.getElementById("word-panel");
+  const metrics = document.querySelector(".metrics-hud");
+
+  const wordList = [
+    "perro", "gato", "fuego", "casa", "leche", "silla", "ventana", "luz", "nube", "cielo",
+    "ratón", "hoja", "rojo", "azul", "verde", "flor", "calor", "frío", "sol", "luna"
+  ];
+
+  let currentIndex = 0;
+  let startTime = null;
+  let correctCount = 0;
+  let errorCount = 0;
+  let interval = null;
+
+  // 1. Cargar palabras al iniciar
+  function loadWords() {
+    wordPanel.innerHTML = "";
+    wordList.forEach((word, i) => {
+      const span = document.createElement("span");
+      span.classList.add("word");
+      if (i === 0) span.classList.add("active");
+      span.textContent = word;
+      wordPanel.appendChild(span);
+    });
+  }
+
+  // 2. Empezar el contador al primer input
+  function startTimer() {
+    if (startTime) return;
+    startTime = new Date();
+    interval = setInterval(updateMetrics, 1000);
+  }
+
+  // 3. Validar palabra al presionar espacio o enter
+  input.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault(); // evita que se agregue espacio
+
+      const typedWord = input.value.trim();
+      const currentWord = wordList[currentIndex];
+      const words = document.querySelectorAll(".word");
+
+      if (!startTime) startTimer();
+
+      // Validar
+      if (typedWord === currentWord) {
+        words[currentIndex].classList.add("correct");
+        correctCount++;
+      } else {
+        words[currentIndex].classList.add("incorrect");
+        errorCount += calculateErrors(currentWord, typedWord);
+      }
+
+      words[currentIndex].classList.remove("active");
+
+      currentIndex++;
+      if (currentIndex < wordList.length) {
+        words[currentIndex].classList.add("active");
+      }
+
+      input.value = ""; // limpiar input
+
+      updateMetrics();
+    }
+  });
+
+  // 4. Actualizar métricas
+  function updateMetrics() {
+    const now = new Date();
+    const elapsedSeconds = (startTime ? (now - startTime) / 1000 : 0);
+    const wpm = elapsedSeconds > 0 ? Math.round((correctCount / elapsedSeconds) * 60) : 0;
+
+    metrics.innerHTML = `
+      ⏱️ ${formatTime(elapsedSeconds)} &nbsp;|&nbsp;
+      🔤 Palabras: ${correctCount} &nbsp;|&nbsp;
+      ⚡ WPM: ${wpm} &nbsp;|&nbsp;
+      ❌ Errores: ${errorCount}
+    `;
+  }
+
+  // 5. Calcular errores por letra
+  function calculateErrors(target, input) {
+    const maxLen = Math.max(target.length, input.length);
+    let errors = 0;
+    for (let i = 0; i < maxLen; i++) {
+      if (target[i] !== input[i]) errors++;
+    }
+    return errors;
+  }
+
+  // 6. Formato de tiempo mm:ss
+  function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  }
+
+  loadWords();
+</script>
+
+</html>

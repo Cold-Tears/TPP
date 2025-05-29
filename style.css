@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Fira Code', monospace;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.metrics-hud {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(30, 30, 30, 0.9);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 999;
+}
+
+.metrics-hud div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-panel {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.middle-panel {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.bottom-panel {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #2a2a2a;
+  padding: 20px;
+}
+
+input#input-word {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 22px;
+  padding: 10px 20px;
+  width: 60%;
+  outline: none;
+}
+
+.word {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.active {
+  background-color: #444;
+  border-bottom: 2px solid #facc15;
+}
+
+.correct {
+  color: #8aff80;
+}
+
+.incorrect {
+  color: #ff6b6b;
+}

@@ -63,12 +63,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px 40px;
   flex-wrap: wrap;
   gap: 12px;
   font-size: 24px;
   line-height: 1.6;
+  background-color: rgba(0, 0, 0, 0.8); /* 🎯 Fondo negro semitransparente */
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
 }
+
 
 .bottom-panel {
   flex: 2;

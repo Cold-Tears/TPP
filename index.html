@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Juego de Escritura</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- HUD personaje arriba izquierda -->
-  <div id="character-hud">
-    <div id="char-image-placeholder"></div>
-    <div id="char-info">
-      <div id="char-name">Mago Estudiante</div>
-      <div id="char-level">Nivel: 1</div>
-      <div id="char-xp-bar-container">
-        <div id="char-xp-bar"></div>
+  <div class="player-hud">
+    <img id="avatar-img" src="imagenes/personaje-imagen-1.png" alt="Avatar del personaje" />
+    <div class="player-info">
+      <div id="player-title">Aprendiz Arcano</div>
+      <div id="player-level">Nivel 1</div>
+      <div class="xp-bar-container">
+        <div id="xp-bar" class="xp-bar"></div>
       </div>
     </div>
   </div>
 
   <!-- background-->
   <div class="background-blur"></div>
-  
+
   <!-- HUD de métricas -->
   <div class="metrics-hud">
     <div><span>⏱️ Tiempo:</span><span id="hud-time">00:00</span></div>
@@ -43,14 +45,10 @@
 
   <!-- Panel inferior (input) -->
   <div class="bottom-panel">
-    <input
-      type="text"
-      id="input-word"
-      autocomplete="off"
-      placeholder="Escribe aquí y presiona espacio o enter..."
-    />
+    <input type="text" id="input-word" autocomplete="off" placeholder="Escribe aquí y presiona espacio o enter..." />
   </div>
 
   <script src="main.js"></script>
 </body>
+
 </html>

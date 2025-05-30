@@ -1,0 +1,128 @@
+[
+  {
+    "minNivel": 1,
+    "maxNivel": 9,
+    "titulo": "Aprendiz Arcano",
+    "imagen": "imagenes/personaje-imagen-1.png"
+  },
+  {
+    "minNivel": 10,
+    "maxNivel": 19,
+    "titulo": "Aspirante Místico",
+    "imagen": "imagenes/personaje-imagen-2.png"
+  },
+  {
+    "minNivel": 20,
+    "maxNivel": 29,
+    "titulo": "Hechicero Novato",
+    "imagen": "imagenes/personaje-imagen-3.png"
+  },
+  {
+    "minNivel": 30,
+    "maxNivel": 39,
+    "titulo": "Erudito de Runas",
+    "imagen": "imagenes/personaje-imagen-4.png"
+  },
+  {
+    "minNivel": 40,
+    "maxNivel": 49,
+    "titulo": "Maestro Elemental",
+    "imagen": "imagenes/personaje-imagen-5.png"
+  },
+  {
+    "minNivel": 50,
+    "maxNivel": 59,
+    "titulo": "Conjurador Supremo",
+    "imagen": "imagenes/personaje-imagen-6.png"
+  },
+  {
+    "minNivel": 60,
+    "maxNivel": 69,
+    "titulo": "Sabio de las Sombras",
+    "imagen": "imagenes/personaje-imagen-7.png"
+  },
+  {
+    "minNivel": 70,
+    "maxNivel": 79,
+    "titulo": "Arzomago del Vacío",
+    "imagen": "imagenes/personaje-imagen-8.png"
+  },
+  {
+    "minNivel": 80,
+    "maxNivel": 89,
+    "titulo": "Archimago Eterno",
+    "imagen": "imagenes/personaje-imagen-9.png"
+  },
+  {
+    "minNivel": 90,
+    "maxNivel": 99,
+    "titulo": "Avatar de la Magia",
+    "imagen": "imagenes/personaje-imagen-10.png"
+  },
+  {
+    "minNivel": 100,
+    "maxNivel": 109,
+    "titulo": "Soberano Arcano",
+    "imagen": "imagenes/personaje-imagen-11.png"
+  },
+  {
+    "minNivel": 110,
+    "maxNivel": 119,
+    "titulo": "Tejedor del Cosmos",
+    "imagen": "imagenes/personaje-imagen-12.png"
+  },
+  {
+    "minNivel": 120,
+    "maxNivel": 129,
+    "titulo": "Custodio del Maná Eterno",
+    "imagen": "imagenes/personaje-imagen-13.png"
+  },
+  {
+    "minNivel": 130,
+    "maxNivel": 139,
+    "titulo": "Legado de los Antiguos",
+    "imagen": "imagenes/personaje-imagen-14.png"
+  },
+  {
+    "minNivel": 140,
+    "maxNivel": 149,
+    "titulo": "Maestro del Infinito",
+    "imagen": "imagenes/personaje-imagen-15.png"
+  },
+  {
+    "minNivel": 150,
+    "maxNivel": 159,
+    "titulo": "Oráculo Estelar",
+    "imagen": "imagenes/personaje-imagen-16.png"
+  },
+  {
+    "minNivel": 160,
+    "maxNivel": 169,
+    "titulo": "Encarnación del Conjuro",
+    "imagen": "imagenes/personaje-imagen-17.png"
+  },
+  {
+    "minNivel": 170,
+    "maxNivel": 179,
+    "titulo": "Alma del Vacío Mágico",
+    "imagen": "imagenes/personaje-imagen-18.png"
+  },
+  {
+    "minNivel": 180,
+    "maxNivel": 189,
+    "titulo": "Señor de los Secretos",
+    "imagen": "imagenes/personaje-imagen-19.png"
+  },
+  {
+    "minNivel": 190,
+    "maxNivel": 199,
+    "titulo": "Último Archimago",
+    "imagen": "imagenes/personaje-imagen-20.png"
+  },
+  {
+    "minNivel": 200,
+    "maxNivel": 999,
+    "titulo": "Sir Blanquician Jr Pequeñito Satanas",
+    "imagen": "imagenes/personaje-imagen-21.png"
+  }
+]

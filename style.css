@@ -30,65 +30,63 @@ body {
   filter: blur(4px);
 }
 
-/* HUD personaje arriba izquierda */
-#character-hud {
-  position: fixed;
+/* HUD del jugador - Izquierda superior */
+.player-hud {
+  position: absolute;
   top: 20px;
   left: 20px;
+  background: rgba(30, 30, 30, 0.9);
+  padding: 12px 16px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  background: rgba(30, 30, 30, 0.9);
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  z-index: 1000;
+  gap: 12px;
   color: #fff;
-  font-family: 'Fira Code', monospace;
-  width: 280px;
+  z-index: 999;
+  font-size: 14px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
 }
 
-#char-image-placeholder {
-  width: 128px;
-  height: 128px;
-  background-image: url('imagenes/character-face.png'); /* Aquí colocas tu imagen de personaje */
-  background-size: 115% 100%;
-  background-color: #444; /* Aquí colocas tu imagen o background */
-  border-radius: 10px;
-  margin-right: 16px;
+.player-hud img#avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #facc15;
+  background-color: #1e1e1e;
 }
 
-#char-info {
-  flex: 1;
+.player-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 4px;
 }
 
-#char-name {
-  font-size: 18px;
+#player-title {
   font-weight: bold;
-  margin-bottom: 6px;
-}
-
-#char-level {
   font-size: 16px;
-  margin-bottom: 12px;
+  color: #facc15;
 }
 
-#char-xp-bar-container {
+#player-level {
+  font-size: 14px;
+}
+
+.xp-bar-container {
+  background-color: #333;
+  border-radius: 4px;
   width: 100%;
-  height: 20px;
-  background: #333;
-  border-radius: 10px;
+  height: 8px;
   overflow: hidden;
+  margin-top: 4px;
 }
 
-#char-xp-bar {
+.xp-bar {
+  background-color: #38bdf8;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #a0f260, #48a868);
-  transition: width 0.3s ease;
-  border-radius: 10px 0 0 10px;
+  transition: width 0.3s ease-in-out;
 }
 
 /* HUD métricas (derecha) */

@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- HUD personaje arriba izquierda -->
+  <div id="character-hud">
+    <div id="char-image-placeholder"></div>
+    <div id="char-info">
+      <div id="char-name">Mago Estudiante</div>
+      <div id="char-level">Nivel: 1</div>
+      <div id="char-xp-bar-container">
+        <div id="char-xp-bar"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- background-->
   <div class="background-blur"></div>
   
@@ -17,7 +29,7 @@
     <div><span>⚡ WPM:</span><span id="hud-wpm">0</span></div>
     <div><span>❌ Errores:</span><span id="hud-errors">0</span></div>
     <button id="reset-btn">🔄 Reiniciar</button>
-    <button id="music-btn">🎵 Música</button>
+    <button id="music-btn" hidden='hidden'>🎵 Música</button>
   </div>
 
   <!-- Panel superior -->

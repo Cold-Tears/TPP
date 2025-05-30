@@ -1,4 +1,23 @@
 [
-  "perro", "gato", "fuego", "casa", "leche", "silla", "ventana", "luz", "nube", "cielo",
-  "ratón", "hoja", "rojo", "azul", "verde", "flor", "calor", "frío", "sol", "luna"
+  "hechizo", "magia", "varita", "brujo", "encantamiento", "misterio", "conjuro", "alquimia", "arcano", "sortilegio",
+  "maná", "hechicero", "invocación", "sombras", "elemental", "ritual", "oráculo", "grimorio", "runas", "energía",
+  "eterno", "aura", "esencia", "fosforescente", "etéreo", "transmutación", "ilusión", "oculto", "destino", "portador",
+  "místico", "talismán", "elixir", "sabiduría", "fuerza", "conocimiento", "cósmico", "divinación", "trascendencia", "dominio",
+  "nexo", "sello", "reliquia", "espíritu", "guardian", "alma", "vínculo", "invocador", "telequinesis", "levitación",
+  "astral", "dimensión", "ocultismo", "maldición", "bendición", "sombra", "runico", "evocación", "traslado", "resplandor",
+  "inmortal", "conjurar", "estigma", "nigromancia", "fantasmal", "espectral", "foco", "sigilo", "encanto", "glifo",
+  "influjo", "espejismo", "hexágono", "símbolo", "reencarnación", "templo", "ritualista", "pergamino", "sabio", "nebuloso",
+  "poción", "extracto", "visión", "dimensional", "relámpago", "tornado", "fuego", "hielo", "rayo", "tierra",
+  "piedra", "ceniza", "cristal", "destello", "necrópolis", "infierno", "paradoja", "crepúsculo", "aurora", "eclipse",
+  "cólera", "tempestad", "místico", "sagrado", "profano", "anillo", "corona", "legado", "antiguo", "temporal",
+  "cólera", "juicio", "divino", "despertar", "trascender", "nube", "túnica", "luz", "oscuridad", "eternidad",
+  "elevación", "ciclo", "runico", "eterna", "revelación", "iniciado", "guardián", "centinela", "sabiduría", "maldición",
+  "vórtice", "camino", "esfera", "orbe", "colapso", "claridad", "nexo", "runar", "reencarnar", "resurgir",
+  "sello", "creación", "primordial", "piedra", "obsidiana", "jade", "zócalo", "legión", "antorcha", "chispa",
+  "chispear", "brillar", "reflejo", "eco", "recitar", "verso", "párrafo", "cántico", "mantra", "murmullo",
+  "confín", "abismo", "inframundo", "vigilante", "luzcaída", "corazón", "sueño", "noche", "aurora", "silencio",
+  "caos", "orden", "equilibrio", "sabio", "caído", "elemento", "canalizar", "evocar", "manipular", "sellar",
+  "abrir", "cerrar", "flotar", "despertar", "sentido", "vibración", "resonar", "armonía", "invocar", "proteger",
+  "armadura", "gloria", "condena", "castigo", "esperanza", "eco", "visión", "ritmo", "deseo", "conquista"
 ]
+

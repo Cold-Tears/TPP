@@ -1,3 +1,4 @@
+/* Reset y básicos */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ body {
   flex-direction: column;
 }
 
+/* Fondo borroso */
 .background-blur {
   position: fixed;
   top: 0;
@@ -20,14 +22,76 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url('imagenes/referencia-fondo.png'); /* 🔁 Cambia aquí tu imagen */
+  background-image: url('imagenes/referencia-fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.3;
-  filter: blur(4px); /* 🎯 Puedes cambiar este valor para ajustar el blur */
+  filter: blur(4px);
 }
 
+/* HUD personaje arriba izquierda */
+#character-hud {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.9);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  z-index: 1000;
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  width: 280px;
+}
+
+#char-image-placeholder {
+  width: 128px;
+  height: 128px;
+  background-image: url('imagenes/character-face.png'); /* Aquí colocas tu imagen de personaje */
+  background-size: 115% 100%;
+  background-color: #444; /* Aquí colocas tu imagen o background */
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+#char-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#char-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+#char-level {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#char-xp-bar-container {
+  width: 100%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#char-xp-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #a0f260, #48a868);
+  transition: width 0.3s ease;
+  border-radius: 10px 0 0 10px;
+}
+
+/* HUD métricas (derecha) */
 .metrics-hud {
   position: absolute;
   top: 20px;
@@ -66,6 +130,7 @@ body {
   justify-content: space-between;
 }
 
+/* Panel superior */
 .top-panel {
   flex: 6;
   display: flex;
@@ -82,6 +147,7 @@ body {
   filter: drop-shadow(0 0 10px #00000088);
 }
 
+/* Panel medio */
 .middle-panel {
   flex: 2;
   display: flex;
@@ -92,11 +158,12 @@ body {
   gap: 12px;
   font-size: 24px;
   line-height: 1.6;
-  background-color: rgba(0, 0, 0, 0.8); /* 🎯 Fondo negro semitransparente */
+  background-color: rgba(0, 0, 0, 0.8);
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
 }
 
+/* Panel inferior */
 .bottom-panel {
   flex: 2;
   display: flex;
@@ -117,6 +184,7 @@ input#input-word {
   outline: none;
 }
 
+/* Palabras */
 .word {
   padding: 4px 8px;
   border-radius: 4px;

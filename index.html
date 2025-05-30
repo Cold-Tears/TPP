@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Juego de Escritura</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -20,17 +20,21 @@
 
   <!-- Panel superior -->
   <div class="top-panel">
-    <img src="imagenes/referencia-1.png" alt="pernaje mago" class="top-image" />
+    <img src="imagenes/referencia-1.png" alt="personaje mago" class="top-image" />
   </div>
 
   <div class="middle-panel" id="word-panel">
-  <!-- Panel de palabras -->
     <!-- Palabras se cargarán dinámicamente -->
   </div>
 
   <!-- Panel inferior (input) -->
   <div class="bottom-panel">
-    <input type="text" id="input-word" autocomplete="off" placeholder="Escribe aquí y presiona espacio o enter..." />
+    <input
+      type="text"
+      id="input-word"
+      autocomplete="off"
+      placeholder="Escribe aquí y presiona espacio o enter..."
+    />
   </div>
 
   <script src="main.js"></script>

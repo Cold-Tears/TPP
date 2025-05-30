@@ -56,6 +56,14 @@ body {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.top-image {
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #00000088);
 }
 
 .middle-panel {
@@ -72,7 +80,6 @@ body {
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
 }
-
 
 .bottom-panel {
   flex: 2;
@@ -110,20 +117,4 @@ input#input-word {
 
 .incorrect {
   color: #ff6b6b;
-}
-
-.top-panel {
-  flex: 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #2a2a2a;
-  overflow: hidden;
-}
-
-.top-image {
-  max-height: 90%;
-  max-width: 90%;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px #00000088);
 }

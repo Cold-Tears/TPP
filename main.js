@@ -1,18 +1,43 @@
 const input = document.getElementById("input-word");
 const wordPanel = document.getElementById("word-panel");
 
-const wordList = [
-  "perro", "gato", "fuego", "casa", "leche", "silla", "ventana", "luz", "nube", "cielo",
-  "ratón", "hoja", "rojo", "azul", "verde", "flor", "calor", "frío", "sol", "luna"
-];
-
+let wordList = [];
 let currentIndex = 0;
 let startTime = null;
 let correctCount = 0;
 let errorCount = 0;
 let interval = null;
 
-// Cargar palabras
+// Cargar palabras desde JSON externo
+async function loadWordsFromJSON() {
+  try {
+    const response = await fetch('words.json');
+    if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
+    wordList = await response.json();
+    initGame();
+  } catch (error) {
+    console.error("Error cargando palabras:", error);
+    wordPanel.textContent = "Error cargando palabras.";
+  }
+}
+
+// Inicializar el juego
+function initGame() {
+  currentIndex = 0;
+  startTime = null;
+  correctCount = 0;
+  errorCount = 0;
+
+  loadWords();
+  updateMetrics();
+
+  input.disabled = false;
+  input.value = "";
+  input.focus();
+  if(interval) clearInterval(interval);
+}
+
+// Cargar palabras al panel
 function loadWords() {
   wordPanel.innerHTML = "";
   wordList.forEach((word, i) => {
@@ -35,6 +60,8 @@ function startTimer() {
 input.addEventListener("keydown", (e) => {
   if (e.key === " " || e.key === "Enter") {
     e.preventDefault();
+    if (currentIndex >= wordList.length) return;
+
     const typedWord = input.value.trim();
     const currentWord = wordList[currentIndex];
     const words = document.querySelectorAll(".word");
@@ -54,6 +81,9 @@ input.addEventListener("keydown", (e) => {
     currentIndex++;
     if (currentIndex < wordList.length) {
       words[currentIndex].classList.add("active");
+    } else {
+      input.disabled = true; // Fin del juego
+      clearInterval(interval);
     }
 
     input.value = "";
@@ -90,4 +120,5 @@ function formatTime(seconds) {
   return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
 
-loadWords();
+// Cargar las palabras y arrancar
+loadWordsFromJSON();

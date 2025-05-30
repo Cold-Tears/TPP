@@ -121,16 +121,27 @@ function formatTime(seconds) {
 }
 
 // Boton reiniciar hud
-document.getElementById("reset-btn").addEventListener("click", () => {
-  clearInterval(interval);
-  startTime = null;
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    restartGame();
+  }
+});
+
+function restartGame() {
+  currentIndex = 0;
   correctCount = 0;
   errorCount = 0;
-  currentIndex = 0;
-  input.value = "";
+  startTime = null;
+  clearInterval(interval);
+
   loadWords();
   updateMetrics();
-});
+
+  input.disabled = false;
+  input.value = '';
+  input.focus();
+}
 
 // Boton musica
 const music = new Audio("audio/music.mp3");

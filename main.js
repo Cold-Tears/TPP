@@ -34,7 +34,7 @@ function initGame() {
   input.disabled = false;
   input.value = "";
   input.focus();
-  if(interval) clearInterval(interval);
+  if (interval) clearInterval(interval);
 }
 
 // Cargar palabras al panel
@@ -119,6 +119,33 @@ function formatTime(seconds) {
   const secs = Math.floor(seconds % 60);
   return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
+
+// Boton reiniciar hud
+document.getElementById("reset-btn").addEventListener("click", () => {
+  clearInterval(interval);
+  startTime = null;
+  correctCount = 0;
+  errorCount = 0;
+  currentIndex = 0;
+  input.value = "";
+  loadWords();
+  updateMetrics();
+});
+
+// Boton musica
+const music = new Audio("audio/music.mp3");
+music.volume = 0.5
+music.loop = true;
+let isPlaying = false;
+
+document.getElementById("music-btn").addEventListener("click", () => {
+  if (isPlaying) {
+    music.pause();
+  } else {
+    music.play();
+  }
+  isPlaying = !isPlaying;
+});
 
 // Cargar las palabras y arrancar
 loadWordsFromJSON();

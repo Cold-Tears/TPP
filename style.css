@@ -45,6 +45,22 @@ body {
   z-index: 999;
 }
 
+.metrics-hud button {
+  margin-top: 6px;
+  background-color: #272727;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.metrics-hud button:hover {
+  background-color: #333;
+}
+
 .metrics-hud div {
   display: flex;
   justify-content: space-between;
